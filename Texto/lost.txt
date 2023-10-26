@@ -1,0 +1,13 @@
+Libro de cuentas 
+
+saldo
+-monto
+-fecha y hora 
+-informacion
+-tipo[entrada o salida] 
+
+user
+-nombre
+-contraseña
+-Email
+
