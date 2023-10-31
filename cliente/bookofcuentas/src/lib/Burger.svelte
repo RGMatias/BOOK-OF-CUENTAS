@@ -49,9 +49,9 @@
   /* Estilos para la ventana emergente */
   .popup-container {
     position: fixed;
-    top: 50px;
-    left: 50px;
-    width: 300px; /* Ajusta el ancho según tus necesidades */
+    top: 100px;
+    left: 148px;
+    width: 200px; /* Ajusta el ancho según tus necesidades */
     background-color: #fff;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
