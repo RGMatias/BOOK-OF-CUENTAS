@@ -1,5 +1,13 @@
 :root {
-  --color-1:white;
+  --color-1:#ffeede;
+  --color-2:#980505;
+  --color-3:white;
+  --color-4:#000000(0,0,0,0.60);
+
+  --BG-1:#000000;
+  --BG-2:#ffeede;
+  --BG-3:#e4d5c7;
+  --BG-4:#bbafa3;
 
 }
 
