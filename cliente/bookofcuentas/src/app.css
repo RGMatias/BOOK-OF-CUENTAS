@@ -1,12 +1,13 @@
 @font-face {
-  font-family: 'koulen';
   src: url('assets/koulen-Regular.ttf') format('truetype');
+  font-family: 'koulen';
   font-style: normal;
   font-weight: normal;
   
 }
 
 :root {
+  font-family: "koulen";
   --color-1:#ffeede;
   --color-2:#980505;
   --color-3:white;
