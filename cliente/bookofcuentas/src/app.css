@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'koulen';
+  src: url('assets/koulen-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  
+}
+
 :root {
   --color-1:#ffeede;
   --color-2:#980505;
@@ -8,14 +16,13 @@
   --BG-2:#ffeede;
   --BG-3:#e4d5c7;
   --BG-4:#bbafa3;
-
+  
+  
 }
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: var();
     background-color: var(--color-1);
   }
   a:hover {
