@@ -51,8 +51,8 @@
   /* Estilos para la ventana emergente */
   .popup-container {
     position: fixed;
-    top: 100px;
-    left: 148px;
+    top: 120px;
+    left: 400px;
     width: 285px;/* Ajusta el ancho según tus necesidades */
     height: 755px;/* Ajusta el ancho según tus necesidades */
     flex-shrink: 0; /* Ajusta el ancho según tus necesidades */
