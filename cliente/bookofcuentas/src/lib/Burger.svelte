@@ -52,7 +52,7 @@
   .popup-container {
     position: fixed;
     top: 120px;
-    left: 400px;
+    left: 393px;
     width: 285px;/* Ajusta el ancho según tus necesidades */
     height: 755px;/* Ajusta el ancho según tus necesidades */
     flex-shrink: 0; /* Ajusta el ancho según tus necesidades */
@@ -71,6 +71,7 @@
     width: 285.185px;
     height: 68.91px;
     flex-shrink: 0;
+    margin-top: 500px;
   }
 
   .popup-button-white{
@@ -81,6 +82,7 @@
     width: 285.185px;
     height: 68.91px;
     flex-shrink: 0;
+    margin: 5px;
   }
   /* <CSS: Clases para mostrar u ocultar la ventana emergente */
   .show {
