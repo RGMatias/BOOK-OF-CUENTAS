@@ -1,4 +1,7 @@
 <script>
+  import agregarSRC from "../assets/icons/Agregar.png"
+  import filtroSRC from "../assets/icons/Filtro.png"
+    import Botton from "./Botton.svelte";
   let isMenuOpen = false;
 
   function toggleMenu() {
@@ -15,9 +18,12 @@
 
 <!-- Ventana emergente -->
 <div class="popup-container {isMenuOpen ? 'show' : 'hide'}">
-  <button class="popup-button-white">AGREGAR</button>
+  <Botton src={agregarSRC} buttonName="AGREGAR"/>
+  <Botton src={filtroSRC} buttonName="FILTRO"/>
+  <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
+  <!-- <button class="popup-button-white">AGREGAR</button>
   <button class="popup-button-white">FILTRO</button>
-  <button class="popup-button-red">CERRAR SESIÒN</button>
+  <button class="popup-button-red">CERRAR SESIÒN</button> -->
 </div>
 
 <style>
@@ -59,40 +65,21 @@
     top: 120px;
     left: 393px;
     width: 285px;/* Ajusta el ancho según tus necesidades */
-    height: 755px;/* Ajusta el ancho según tus necesidades */
-    flex-shrink: 0; /* Ajusta el ancho según tus necesidades */
+    height: 755px;
+    flex-shrink: 0; 
     background-color: #000000;
     border: 1px solid #000000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
-  }
-   
-  /* Estilo de el contenido de la ventana emergente  */
-  .popup-button-red{
-    border-radius: 25px;
-    border: 1px solid rgba(152, 5, 5, 0.75);
-    color: #980505BF;
-    background: #000000;
-    width: 285.185px;
-    height: 68.91px;
-    flex-shrink: 0;
-    margin-top: 500px;
-  }
-
-  .popup-button-white{
-    border-radius: 25px;
-    border: 1px solid rgba(240, 225, 206, 0.75);
-    background: #000;
-    color: #F0E1CEBF;
-    width: 285.185px;
-    height: 68.91px;
-    flex-shrink: 0;
-    margin: 5px;
+    display: grid;
+    grid-template-columns: auto;
+    align-content: start;
+    
   }
   /* <CSS: Clases para mostrar u ocultar la ventana emergente */
-  .show {
+  /* .show {
     display: block;
-  }
+  } */
 
   .hide {
     display: none;
