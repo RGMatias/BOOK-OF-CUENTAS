@@ -7,37 +7,35 @@
 
 <header>
     <div class="container marco">
-        <div class="title-mobile"> 
-           <img {src} alt="bookICON">
-        </div>
-        <div>
-            <Burger />
-        </div>
-        <div  class="tres-puntos font-color" >Nombre:Gustavo Horacio Real de la Villa Fuente</div>
-        <div  class="tres-puntos font-color">Saldo Total:99999999999</div>
+        <img {src} alt="bookICON" style="width: 20em;">
+        <div  class="tres-puntos font-color  " style="justify-self:center;" >Nombre:Darwin Rodriguez Gamarra</div>
+        <div  class="tres-puntos font-color" >Saldo Total:99999999999</div>
+        <Burger/>
     </div>
 </header>
 
 <style>
+
 .marco{
     border-radius: 0px 0px 50px 50px;
     background: #000000;
     width: 700px;
     height: 164px;
     flex-shrink: 0;
-    margin: -8px;
     }
 
 header{
     display: grid;
-    grid-template-columns:auto auto auto;
+    /* grid-template-columns:auto auto  auto auto; */
 
 }
 
 .container{
     display: grid;
+    width: 100%;
     grid-template-columns:auto auto auto auto;
-    
+    justify-content:center ;
+
 }
 
 .font-color{
@@ -46,12 +44,13 @@ header{
 
 @media only screen and (max-width: 800px) {
     .container {
-      grid-template-columns:auto auto auto;
+      grid-template-columns:auto auto;
+      grid-template-rows: auto auto;
         
     }
-    .title-mobile{
-        grid-column: 1/3;
-    }
+    /* .item{
+  grid-area: 1 / 2 ;
+} */
     .tres-puntos{
         white-space: nowrap;
         overflow: hidden;

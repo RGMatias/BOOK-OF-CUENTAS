@@ -7,7 +7,7 @@
 </script>
 
 <!-- Icono de hamburguesa y ventana emergente -->
-<div class="container {isMenuOpen ? 'change' : ''}" on:click={toggleMenu}>
+<div class="item container {isMenuOpen ? 'change' : ''}" on:click={toggleMenu}>
   <div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div>
@@ -26,6 +26,11 @@
     display: inline-block;
     cursor: pointer;
   }
+
+  .item{
+ justify-self: end;
+ margin:25px 35px 0px 0px;
+}
 
   .bar1, .bar2, .bar3 {
     width: 35px;
