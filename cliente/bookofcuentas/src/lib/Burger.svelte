@@ -34,8 +34,8 @@
   }
 
   .item{
- justify-self: end;
- margin:25px 35px 0px 0px;
+    justify-self: center;
+    margin: 55px 0px;
 }
 
   .bar1, .bar2, .bar3 {

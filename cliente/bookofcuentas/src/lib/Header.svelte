@@ -7,9 +7,9 @@
 
 <header>
     <div class="container marco">
-        <img {src} alt="bookICON" style="width: 20em;">
-        <div  class="tres-puntos font-color  " style="justify-self:center;" >Nombre:Darwin Rodriguez Gamarra</div>
-        <div  class="tres-puntos font-color" >Saldo Total:99999999999</div>
+        <img {src} alt="bookICON" class="icon">
+        <div  class="tres-puntos font-color data item" >Nombre:Darwin Rodriguez Gamarra</div>
+        <div  class="tres-puntos font-color data item2"  >Saldo Total:99999999999</div>
         <Burger/>
     </div>
 </header>
@@ -25,8 +25,8 @@
     }
 
 header{
-    display: grid;
-    /* grid-template-columns:auto auto  auto auto; */
+    /* display: grid; */
+    grid-template-columns:auto auto  auto auto;
 
 }
 
@@ -34,7 +34,7 @@ header{
     display: grid;
     width: 100%;
     grid-template-columns:auto auto auto auto;
-    justify-content:center ;
+    /* justify-content:center ; */
 
 }
 
@@ -42,15 +42,39 @@ header{
     color: antiquewhite;
 }
 
+.icon{
+    width: 20em;
+    justify-self: center;
+    margin: 30px 0px;
+}
+
+.data{   
+    justify-self: center;
+    margin: 60px 0px;
+
+}
+
 @media only screen and (max-width: 800px) {
+
+    .marco{
+        height: 12em;
+
+    }
+   
     .container {
       grid-template-columns:auto auto;
       grid-template-rows: auto auto;
-        
     }
-    /* .item{
-  grid-area: 1 / 2 ;
-} */
+    
+    .item{
+        order: 3;
+        margin: -2em 3em 0em 0em;
+    }
+    .item2{
+        order:4;
+        margin: -2em 6em 0em 0em;
+    }
+    
     .tres-puntos{
         white-space: nowrap;
         overflow: hidden;
