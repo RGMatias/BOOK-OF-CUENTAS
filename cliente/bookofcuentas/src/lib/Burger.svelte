@@ -21,9 +21,6 @@
   <Botton src={agregarSRC} buttonName="AGREGAR"/>
   <Botton src={filtroSRC} buttonName="FILTRO"/>
   <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
-  <!-- <button class="popup-button-white">AGREGAR</button>
-  <button class="popup-button-white">FILTRO</button>
-  <button class="popup-button-red">CERRAR SESIÒN</button> -->
 </div>
 
 <style>
@@ -73,6 +70,7 @@
     padding: 10px;
     display: grid;
     grid-template-columns: auto;
+    grid-template-rows: auto auto 0.99fr;
     align-content: start;
     
   }

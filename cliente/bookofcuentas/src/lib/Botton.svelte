@@ -28,6 +28,7 @@
         padding: 5px;
         height: 45px;
         align-items: center;
+        align-content: center;
         
     }
     img{
