@@ -30,6 +30,10 @@
 
    
 @media only screen and (max-width: 800px) {
+    .container{
+        width:24em;
+        height: 37em;
+    }
     
 
 }
