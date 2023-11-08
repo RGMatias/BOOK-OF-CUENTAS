@@ -2,6 +2,7 @@
   import agregarSRC from "../assets/icons/Agregar.png"
   import filtroSRC from "../assets/icons/Filtro.png"
     import Botton from "./Botton.svelte";
+    import Logout from "./Logout.svelte";
   let isMenuOpen = false;
 
   function toggleMenu() {
@@ -22,7 +23,7 @@
   <Botton src={filtroSRC} buttonName="FILTRO"/>
   <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
 </div>
-
+<Logout  />
 <style>
   /* Estilos para icono de hamburguesa y ventana emergente  */
   .container {
