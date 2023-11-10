@@ -10,7 +10,7 @@
 </script>
 
 <!-- Icono de hamburguesa y ventana emergente -->
-<div class="item container {isMenuOpen ? 'change' : ''}" on:click={toggleMenu}>
+<div class="container {isMenuOpen ? 'change' : ''}" on:click={toggleMenu}>
   <div class="bar1"></div>
   <div class="bar2"></div>
   <div class="bar3"></div>
@@ -31,8 +31,13 @@
   }
 
   .item{
+<<<<<<< Updated upstream
     justify-self: center;
     margin: 55px 0px;
+=======
+ justify-self: end;
+ width: 50px;
+>>>>>>> Stashed changes
 }
 
   .bar1, .bar2, .bar3 {
