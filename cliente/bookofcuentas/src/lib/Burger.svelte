@@ -32,13 +32,10 @@
   }
 
   .item{
-<<<<<<< Updated upstream
     justify-self: center;
     margin: 55px 0px;
-=======
- justify-self: end;
- width: 50px;
->>>>>>> Stashed changes
+    justify-self: end;
+    width: 50px;
 }
 
   .bar1, .bar2, .bar3 {
