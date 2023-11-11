@@ -8,3 +8,6 @@ const DBConnection=()=>{
         console.log("Error al conectarce a la Base de datos")
     }
 }
+module.exports={
+    DBConnection
+}
