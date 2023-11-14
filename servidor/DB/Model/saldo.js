@@ -1,5 +1,5 @@
-const mongooose = require ("mongoose")
-const saldoSchema = new mongooose.Schema({
+const mongoose = require ("mongoose")
+const saldoSchema = new mongoose.Schema({
     fecha: Number,
     informacion: String,
     status:{
@@ -8,4 +8,4 @@ const saldoSchema = new mongooose.Schema({
     },
     monto: Number,
 })
-module.exports=mongooose.model("saldo",saldoSchema,"saldo")
+module.exports=mongoose.model("Saldo",saldoSchema,"saldoCollection")
