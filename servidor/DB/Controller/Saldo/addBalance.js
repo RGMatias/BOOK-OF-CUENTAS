@@ -3,7 +3,7 @@ const Saldo = require("../../Model/saldo")
 const addBalance= async (fecha , informacion , status , monto )=> {
 
     try {
-        const saldo= new saldo({fecha,informacion,status,monto})
+        const saldo= new Saldo({fecha,informacion,status,monto})
         await saldo.save()
         return {sucess: true , msg:"El saldo a ha añadido correctamente" , data:saldo}
     
