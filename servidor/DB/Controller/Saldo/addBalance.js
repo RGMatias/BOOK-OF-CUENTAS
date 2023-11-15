@@ -1,4 +1,4 @@
-const saldo = require("../../Model/saldo")
+const Saldo = require("../../Model/saldo")
 
 const addBalance= async (fecha , informacion , status , monto )=> {
 

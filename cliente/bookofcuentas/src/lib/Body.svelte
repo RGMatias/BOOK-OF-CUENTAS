@@ -11,6 +11,16 @@
         <div>Button</div>
     </div>
 </div>
+<div>
+    <input type="text" name="Fecha" id="Fecha">
+    <input type="text" name="Informacion" id="Informacion">
+    <form action="/Seleccion-tipo" method="post">
+        <input type="radio" name="Tipo" value="Salida"> Salida
+        <input type="radio" name="Tipo" value="Entrada"> Entrada
+    </form>
+    
+    <input type="number" name="Monto" id="Monto">
+</div>
 <!-- a -->
 <style>
     .container{

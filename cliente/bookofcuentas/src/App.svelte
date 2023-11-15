@@ -13,7 +13,6 @@
   <Header/>
   <Body/>
   <Footer/>
-  <Logout/>
  
 </main>
 
