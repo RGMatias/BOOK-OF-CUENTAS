@@ -23,7 +23,6 @@
   <Botton src={filtroSRC} buttonName="FILTRO"/>
   <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
 </div>
-<Logout  />
 <style>
   /* Estilos para icono de hamburguesa y ventana emergente  */
   .container {
