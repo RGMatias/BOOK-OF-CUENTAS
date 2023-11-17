@@ -1,5 +1,5 @@
 const Saldo = require("../../Model/saldo.js")
-const editbalance = async (monto) => {
+const editBalance = async (monto) => {
     let blanceexist = await addBalance.findById({_id}).exec()
     try {
         if (balanceexist) {
@@ -15,4 +15,4 @@ const editbalance = async (monto) => {
     }
 }
 
-module.exports = {editbalance}
+module.exports = {editBalance}

@@ -1,5 +1,14 @@
 <script>
-   
+   import {AddBalance} from "../controllers/Saldo/AddBalance.js"
+    let Informacion = "" , tipo = "" , monto =0
+   const Add =async () => {
+    let balance = await AddBalance (0 , Informacion, tipo , monto)
+    console.log(balance)
+   }
+setTimeout(async() => {
+    await Add()
+},1000);
+
 </script>
 
 <div>
@@ -12,14 +21,17 @@
     </div>
 </div>
 <div>
-    <input type="text" name="Fecha" id="Fecha">
-    <input type="text" name="Informacion" id="Informacion">
-    <form action="/Seleccion-tipo" method="post">
-        <input type="radio" name="Tipo" value="Salida"> Salida
-        <input type="radio" name="Tipo" value="Entrada"> Entrada
-    </form>
-    
-    <input type="number" name="Monto" id="Monto">
+    <input type="text" name="Informacion" bind:value={Informacion} >
+    <select bind:value={tipo}>
+        <option value="ENTRADA">
+            ENTRADA
+        </option>
+        <option value="SALIDA">
+            SALIDA
+        </option>
+    </select>
+    <input type="number" name="Monto" id="Monto" bind:value={monto}>
+    <button on:click={()=>Add()}>Agregar saldo</button>
 </div>
 <!-- a -->
 <style>
