@@ -3,7 +3,7 @@
    import Relog from "./Relog.svelte";
     let Informacion = "" , tipo = "" , monto =0
    const Add =async () => {
-    let balance = await AddBalance (0 , Informacion, tipo , monto)
+    let balance = await AddBalance (new Date().getTime() , Informacion, tipo , monto)
     console.log(balance)
    }
 setTimeout(async() => {
