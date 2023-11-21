@@ -1,5 +1,6 @@
 <script>
-   
+    import Agregar from "./Agregar.svelte";
+
 </script>
 
 <div>
@@ -10,17 +11,9 @@
         <div>Monto</div>
         <div>Button</div>
     </div>
+    <Agregar/>
 </div>
-<div>
-    <input type="text" name="Fecha" id="Fecha">
-    <input type="text" name="Informacion" id="Informacion">
-    <form action="/Seleccion-tipo" method="post">
-        <input type="radio" name="Tipo" value="Salida"> Salida
-        <input type="radio" name="Tipo" value="Entrada"> Entrada
-    </form>
-    
-    <input type="number" name="Monto" id="Monto">
-</div>
+
 <!-- a -->
 <style>
     .container{
@@ -37,6 +30,7 @@
         grid-template-columns: auto auto auto auto auto;
 
     }
+
 
    
 @media only screen and (max-width: 800px) {
