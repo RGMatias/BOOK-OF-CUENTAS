@@ -1,5 +1,6 @@
 <script>
    import {AddBalance} from "../controllers/Saldo/AddBalance.js"
+   import Relog from "./Relog.svelte";
     let Informacion = "" , tipo = "" , monto =0
    const Add =async () => {
     let balance = await AddBalance (0 , Informacion, tipo , monto)
@@ -21,6 +22,7 @@ setTimeout(async() => {
     </div>
 </div>
 <div>
+    <Relog/>
     <input type="text" name="Informacion" bind:value={Informacion} >
     <select bind:value={tipo}>
         <option value="ENTRADA">

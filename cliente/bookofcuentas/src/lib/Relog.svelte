@@ -1,10 +1,11 @@
 <script>
-    export const Relog = new Date().toLocaleDateString()
+    const Relog = new Date().toLocaleDateString()
     const fecha = Relog
     console.log(fecha)
+    
 </script>
-<div class="{fecha}">
-
+<div >
+    <p>{fecha}</p>
 </div>
 <style>
     
