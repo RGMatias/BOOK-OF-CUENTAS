@@ -1,14 +1,5 @@
 <script>
-   import {AddBalance} from "../controllers/Saldo/AddBalance.js"
-   import Relog from "./Relog.svelte";
-    let Informacion = "" , tipo = "" , monto =0
-   const Add =async () => {
-    let balance = await AddBalance (new Date().getTime() , Informacion, tipo , monto)
-    console.log(balance)
-   }
-setTimeout(async() => {
-    await Add()
-},1000);
+    import Agregar from "./Agregar.svelte";
 
 </script>
 
@@ -20,21 +11,9 @@ setTimeout(async() => {
         <div>Monto</div>
         <div>Button</div>
     </div>
+    <Agregar/>
 </div>
-<div>
-    <Relog/>
-    <input type="text" name="Informacion" bind:value={Informacion} >
-    <select bind:value={tipo}>
-        <option value="ENTRADA">
-            ENTRADA
-        </option>
-        <option value="SALIDA">
-            SALIDA
-        </option>
-    </select>
-    <input type="number" name="Monto" id="Monto" bind:value={monto}>
-    <button on:click={()=>Add()}>Agregar saldo</button>
-</div>
+
 <!-- a -->
 <style>
     .container{
@@ -51,6 +30,7 @@ setTimeout(async() => {
         grid-template-columns: auto auto auto auto auto;
 
     }
+
 
    
 @media only screen and (max-width: 800px) {
