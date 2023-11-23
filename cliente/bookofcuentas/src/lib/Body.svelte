@@ -19,7 +19,7 @@
     .container{
         margin: 1em 1em 1em 1em;
         width: 117em;
-        height: 45em;
+        height: 30em;
         flex-shrink: 0;
         border-radius: 25px;
         border: 5px solid #000;
