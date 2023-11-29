@@ -1,5 +1,24 @@
 <script>
+    import { AddBalance } from "../controllers/Saldo/AddBalance";
     import Agregar from "./Agregar.svelte";
+    import Modal from "./Modal.svelte";
+
+    let informacion
+    let tipo
+    let monto
+
+    function saveInfo(pInformacion, pTipo, pMonto) {
+        informacion=pInformacion
+        tipo=pTipo
+        monto=pMonto   
+        console.log(informacion, tipo, monto, "componenteBody")     
+    }
+    
+    async function agregarBalance(){
+      let result = await AddBalance(new Date().getTime(), informacion, tipo, monto)
+      console.log(result.msg)
+    }
+    
 
 </script>
 
@@ -11,7 +30,10 @@
         <div>Monto</div>
         <div>Button</div>
     </div>
-    <Agregar/>
+    <Modal action={()=>{agregarBalance()}}>
+        <Agregar action={saveInfo} />
+        
+    </Modal>
 </div>
 
 <!-- a -->

@@ -1,101 +1,115 @@
 <script>
-    // your script goes here
+  
+  export let action
+
+  let informacion
+  let tipo
+  let monto
+
+  $:rInfo = informacion
+  $:rTipo = tipo
+  $:rMonto = monto
+  $:{
+    action(rInfo, rTipo, rMonto)
+  }
+
+  
 </script>
 
 <div class="container">
-    
-        <label for="fecha">Fecha:</label>
-        <label for="informacion">Informacion</label>
-        <label for="Tipo">Tipo:</label>
-        <label for="monto">Monto</label>
+  
+      <label for="fecha">Fecha:</label>
+      <label for="informacion">Informacion</label>
+      <label for="Tipo">Tipo:</label>
+      <label for="monto">Monto</label>
 
-        <div>
-          <!-- <input type="datetime-local" id="fecha" name="fecha">     -->
-          {new Date().toLocaleDateString()}
-        </div>
-        <div>
-          <input type="text" id="informacion" name="informacion">
-        </div>
-        <div>
-          <select name="tipo" id="tipo">
-            <option value="Entrada">Entrada</option>
-            <option value="Salida">Salidad</option>
-          </select>
-        </div>
-        <div>
-          <input value="" type="number" id="monto" name="monto">
-        </div>
-        <div class="position">
-          <input class="buttonstyle" type="button" value="Agregar">
-        </div>
-        <div class="position2">
-          <input class="buttonstyle" type="button" value="Cancelar">
-        </div>
+      <div class="container-Date">
+        {new Date().toLocaleDateString()}
+      </div>
+      <div>
+        <input bind:value={informacion} type="text" id="informacion" name="informacion" class="container-L">
+      </div>
+      <div>
+        <select bind:value={tipo} name="tipo" id="tipo" class="font container-L">
+          <option value="ENTRADA">Entrada</option>
+          <option value="SALIDA">Salida</option>
+        </select>
+      </div>
+      <div>
+        <input bind:value={monto} type="number" id="monto" name="monto" class="container-L">
+      </div>
 </div>
 
 <style>
+  
+  .container{
+  width: 45em;
+  flex-shrink: 0;
+  background: #FFEEDE;
+  display: grid;
+  z-index: 20;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+  gap: 15px;
+  padding: 15px;
+  justify-items: center;
+  text-align: center;
+      
+  }
+
+  .font{
+    font-family: 'koulen'
+  }
+
+  .container-L{
+    border-radius: 100px;
+  }
+  
+  .container-Date{
+    width: 10ppx;
+    border-radius: 100px;
+    border: solid 1px;
+    border-color: black;
+    background-color: white;
+  }
+  /* .inline-block{
+    display: inline-block;
+  } */
+  /* .position{
+      grid-column: 1/3;
+      justify-self: end;
     
-    .container{
-        /* margin: -40em 1em 1em 10em; */
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 45em;
-    height: 9em;
-    flex-shrink: 0;
-    border-radius: 25px;
-    border: 5px solid #000;
-    background: #FFEEDE;
-    /* mix-blend-mode: soft-light; */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: grid;
-    z-index: 20;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto;
-    gap: 10px;
-    justify-items: center;
+  }
+  .position2{
+    grid-column: 3/5;
+    justify-self: start;
+
+  }
+
+  .buttonstyle{
     text-align: center;
-        
-    }
 
-    /* .inline-block{
-      display: inline-block;
-    } */
-    .position{
-        grid-column: 1/3;
-        justify-self: end;
-      
-    }
-    .position2{
-      grid-column: 3/5;
-      justify-self: start;
+  } */
 
-    }
-
-    .buttonstyle{
-      text-align: center;
-
-    }
-
-       
+     
 @media only screen and (max-width: 900px) {
-  .position{
-        grid-column: auto;
-        justify-self: start;
-      
-    }
-    .position2{
+/* .position{
       grid-column: auto;
       justify-self: start;
+    
+  }
+  .position2{
+    grid-column: auto;
+    justify-self: start;
 
-    }
-    .container{
-        width: 50%;
-        height: 50%;
-        grid-template-columns: 30px;
-        justify-items:auto;
-    }
-    }
+  } */
+  .container{
+      width: 50%;
+      height: 50%;
+      grid-template-columns: 30px;
+      justify-items:auto;
+  }
+  }
 </style>
 
 <!-- markup (zero or more items) goes here -->
