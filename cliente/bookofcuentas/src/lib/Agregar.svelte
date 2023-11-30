@@ -1,5 +1,19 @@
 <script>
-  // your script goes here
+  
+  export let action
+
+  let informacion
+  let tipo
+  let monto
+
+  $:rInfo = informacion
+  $:rTipo = tipo
+  $:rMonto = monto
+  $:{
+    action(rInfo, rTipo, rMonto)
+  }
+
+  
 </script>
 
 <div class="container">
@@ -13,16 +27,16 @@
         {new Date().toLocaleDateString()}
       </div>
       <div>
-        <input type="text" id="informacion" name="informacion" class="container-L">
+        <input bind:value={informacion} type="text" id="informacion" name="informacion" class="container-L">
       </div>
       <div>
-        <select name="tipo" id="tipo" class="font container-L">
-          <option value="Entrada">Entrada</option>
-          <option value="Salida">Salida</option>
+        <select bind:value={tipo} name="tipo" id="tipo" class="font container-L">
+          <option value="ENTRADA">Entrada</option>
+          <option value="SALIDA">Salida</option>
         </select>
       </div>
       <div>
-        <input value="" type="number" id="monto" name="monto" class="container-L">
+        <input bind:value={monto} type="number" id="monto" name="monto" class="container-L">
       </div>
 </div>
 

@@ -1,13 +1,24 @@
 <script>
-   import {AddBalance} from "../controllers/Saldo/AddBalance.js"
-    let Informacion = "" , tipo = "" , monto =0
-   const Add =async () => {
-    let balance = await AddBalance (new Date().getTime() , Informacion, tipo , monto)
-    console.log(balance)
-   }
-setTimeout(async() => {
-    await Add()
-},1000);
+    import { AddBalance } from "../controllers/Saldo/AddBalance";
+    import Agregar from "./Agregar.svelte";
+    import Modal from "./Modal.svelte";
+
+    let informacion
+    let tipo
+    let monto
+
+    function saveInfo(pInformacion, pTipo, pMonto) {
+        informacion=pInformacion
+        tipo=pTipo
+        monto=pMonto   
+        console.log(informacion, tipo, monto, "componenteBody")     
+    }
+    
+    async function agregarBalance(){
+      let result = await AddBalance(new Date().getTime(), informacion, tipo, monto)
+      console.log(result.msg)
+    }
+    
 
 </script>
 
@@ -19,26 +30,18 @@ setTimeout(async() => {
         <div>Monto</div>
         <div>Button</div>
     </div>
+    <Modal action={()=>{agregarBalance()}}>
+        <Agregar action={saveInfo} />
+        
+    </Modal>
 </div>
-<div>
-    <input type="text" name="Informacion" bind:value={Informacion} >
-    <select bind:value={tipo}>
-        <option value="ENTRADA">
-            ENTRADA
-        </option>
-        <option value="SALIDA">
-            SALIDA
-        </option>
-    </select>
-    <input type="number" name="Monto" id="Monto" bind:value={monto}>
-    <button on:click={()=>Add()}>Agregar saldo</button>
-</div>
+
 <!-- a -->
 <style>
     .container{
         margin: 1em 1em 1em 1em;
         width: 117em;
-        height: 45em;
+        height: 30em;
         flex-shrink: 0;
         border-radius: 25px;
         border: 5px solid #000;
@@ -49,6 +52,7 @@ setTimeout(async() => {
         grid-template-columns: auto auto auto auto auto;
 
     }
+
 
    
 @media only screen and (max-width: 800px) {

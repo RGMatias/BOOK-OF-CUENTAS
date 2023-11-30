@@ -1,6 +1,8 @@
 <script>
     import BtnAgregar from "./BtnAgregar.svelte";
-
+    
+    export let buttonName="AGREGAR"
+    export let action
 
 </script>
 <div class="modal">
@@ -10,10 +12,10 @@
         <div>
             <div class="grid-class-button">
                 <div class="agregarCenter">
-                    <BtnAgregar buttonName="AGREGAR"/>
+                    <BtnAgregar {action} {buttonName}/>
                 </div>
                 <div>
-                    <BtnAgregar positive={false} buttonName="CANCELAR"/>
+                    <BtnAgregar action={()=>{console.log("logica para cancelar")}} positive={false} buttonName="CANCELAR"/>
                 </div>
           
             </div> 

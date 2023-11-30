@@ -1,36 +1,26 @@
 <script>
     export let buttonName 
     export let positive= true
+    export let action
     let borderColor= ""
     if (!positive) {
         borderColor="colorBlack"
     }
+    
 </script>
 <div>
     {#if positive}
-        <button class="positive-Btn container-P" >{buttonName}</button>
+        <button on:click={()=>{action()}} class="positive-Btn container-P" >{buttonName}</button>
         
     {:else}
-        <button class="negative-Btn container-N" >{buttonName}</button>
+        <button on:click={()=>{action()}} class="negative-Btn container-N" >{buttonName}</button>
     {/if}
 </div>
 
 
 
 <style>
-/* .grid-class-button{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
-    padding: 10px;
-    margin: 5px;
-    border: solid 0.5px white;
-    border-radius: 25px;
-    padding: 5px;
-    height: 45px;
-    align-items: center;
-    align-content: center;
-} */
+    
   .positive-Btn{
         width: 142px;
         height: 39.13px;
