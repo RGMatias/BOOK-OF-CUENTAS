@@ -3,7 +3,15 @@
   font-family: 'koulen';
   font-style: normal;
   font-weight: normal;
+
   
+}
+
+@font-face {
+  src: url('assets/Khand-Regular.ttf') format('truetype');
+  font-family: 'khand';
+  font-style: normal;
+  font-weight: normal;
 }
 
 :root {

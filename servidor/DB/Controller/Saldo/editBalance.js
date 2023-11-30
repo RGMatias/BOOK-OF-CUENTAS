@@ -1,9 +1,10 @@
 const Saldo = require("../../Model/saldo.js")
-const editBalance = async (monto) => {
-    let blanceexist = await addBalance.findById({_id}).exec()
+const editBalance = async (Nmonto ,nID) => {
+    // console.log("llego")
+    let blanceexist = await addBalance.findById({_id:nID}).exec()
     try {
         if (balanceexist) {
-         blanceexist.monto
+         blanceexist.monto=Nmonto
          let response = await balanceexist.save()
          return { data:response , msg:"El saldo a sido actualizado correctament" , sucess:true}   
         }
