@@ -1,7 +1,11 @@
 const Saldo = require("../../Model/saldo")
 
-const getFecha = async (fecha)=>{
-    let fechaExist= await fecha.find({fecha}).exec()
+const getFecha = async (desde , hasta)=>{
+    let fechaExist= await Saldo.find({fecha:{$gte:desde},fecha:{$lte:hasta}}).exec()
+    // return {desde,hasta}
+    if (desde>hasta) {
+        return{msg:"Desde tiene que ser meno a hasta" , sucess:false}
+    }
     if (fechaExist) {
         return{data:fechaExist , msg:"Se encontra la informacion requerida" , sucess:true}
     } else {

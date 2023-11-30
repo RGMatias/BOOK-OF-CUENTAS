@@ -1,5 +1,6 @@
 <script>
     import Agregar from "./Agregar.svelte";
+    import Modal from "./Modal.svelte";
 
 </script>
 
@@ -11,7 +12,10 @@
         <div>Monto</div>
         <div>Button</div>
     </div>
-    <Agregar/>
+    <Modal>
+        <Agregar/>
+        
+    </Modal>
 </div>
 
 <!-- a -->
@@ -19,7 +23,7 @@
     .container{
         margin: 1em 1em 1em 1em;
         width: 117em;
-        height: 45em;
+        height: 30em;
         flex-shrink: 0;
         border-radius: 25px;
         border: 5px solid #000;

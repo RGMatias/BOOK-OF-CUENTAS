@@ -1,66 +1,101 @@
 <script>
-    // your script goes here
+  // your script goes here
 </script>
 
 <div class="container">
-    <form action="/action_page.php">
-        <label for="fecha">Fecha:
-        <br><br/>
-        </label>
-        <input type="datetime-local" id="fecha" name="fecha">
-      </form>
+  
+      <label for="fecha">Fecha:</label>
+      <label for="informacion">Informacion</label>
+      <label for="Tipo">Tipo:</label>
+      <label for="monto">Monto</label>
 
-      <form action="/action_page.php">
-        <label for="informacion">Informacion
-        <br><br>
-        </label>
-        <input type="text" id="informacion" name="informacion"><br><br>
-      </form>
-
-    <form action="/action_page.php">
-        <label for="Tipo">Tipo:
-          <br><br>
-        </label>
-        <select name="tipo" id="tipo">
+      <div class="container-Date">
+        {new Date().toLocaleDateString()}
+      </div>
+      <div>
+        <input type="text" id="informacion" name="informacion" class="container-L">
+      </div>
+      <div>
+        <select name="tipo" id="tipo" class="font container-L">
           <option value="Entrada">Entrada</option>
-          <option value="Salida">Salidad</option>
+          <option value="Salida">Salida</option>
         </select>
-      
-    </form>
-      <form action="/action_page.php" >
-        <label for="monto">Monto
-        <br><br>
-        </label>
-        <input value="" type="number" id="monto" name="monto">
-        
-      </form>
-
-      <input class="position" type="Agregar" value="Agregar">
-      <input type="Cancelar" value="cancelar">
+      </div>
+      <div>
+        <input value="" type="number" id="monto" name="monto" class="container-L">
+      </div>
 </div>
 
 <style>
-    
-    .container{
-        margin: -40em 1em 1em 10em;
-    position: 0em 0em 0em 0em;
-    width: 45em;
-    height: 9em;
-    flex-shrink: 0;
-    border-radius: 25px;
-    border: 5px solid #000;
-    background: #FFEEDE;
-    /* mix-blend-mode: soft-light; */
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto;
-        
-    }
+  
+  .container{
+  width: 45em;
+  flex-shrink: 0;
+  background: #FFEEDE;
+  display: grid;
+  z-index: 20;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto;
+  gap: 15px;
+  padding: 15px;
+  justify-items: center;
+  text-align: center;
+      
+  }
 
-    .position{
-        grid-column: 1;
-    }
+  .font{
+    font-family: 'koulen'
+  }
+
+  .container-L{
+    border-radius: 100px;
+  }
+  
+  .container-Date{
+    width: 10ppx;
+    border-radius: 100px;
+    border: solid 1px;
+    border-color: black;
+    background-color: white;
+  }
+  /* .inline-block{
+    display: inline-block;
+  } */
+  /* .position{
+      grid-column: 1/3;
+      justify-self: end;
+    
+  }
+  .position2{
+    grid-column: 3/5;
+    justify-self: start;
+
+  }
+
+  .buttonstyle{
+    text-align: center;
+
+  } */
+
+     
+@media only screen and (max-width: 900px) {
+/* .position{
+      grid-column: auto;
+      justify-self: start;
+    
+  }
+  .position2{
+    grid-column: auto;
+    justify-self: start;
+
+  } */
+  .container{
+      width: 50%;
+      height: 50%;
+      grid-template-columns: 30px;
+      justify-items:auto;
+  }
+  }
 </style>
 
 <!-- markup (zero or more items) goes here -->
