@@ -1,8 +1,8 @@
 const saldo = require("../../../Model/saldo")
 const {deleteBalance} = require ("../../Saldo")
 const deleteBlanceApi = async (req , res) => {
-    const {_id} = req.params
-    const Balance = await deleteBalance(_id)
+    // const {id} = req.params
+    const Balance = await deleteBalance(req.params.id)
     res.json(Balance)
 }
 

@@ -1,6 +1,6 @@
 const Saldo=require("../../Model/saldo")
-const deleteBalance=async (_id)=>{
-    let deleteBalance=await Saldo.deleteOne({_id})
+const deleteBalance=async (id)=>{
+    let deleteBalance=await Saldo.deleteOne({_id:id})
     try {
         if (deleteBalance.deletedCount>0) {
          return{msg:"El saldo se a borrado de forma exitosa", sucess:true}
