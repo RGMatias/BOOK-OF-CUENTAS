@@ -6,8 +6,9 @@
     if (!withIcon) {
         borderColor="colorRed"
     }
+    
 </script>
-<div class="grid-class-button {borderColor}" >
+<div  class="grid-class-button {borderColor}" >
     {#if withIcon}
         <img {src} alt="">
         <button  >{buttonName}</button>

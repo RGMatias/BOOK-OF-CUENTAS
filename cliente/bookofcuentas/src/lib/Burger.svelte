@@ -3,11 +3,14 @@
   import filtroSRC from "../assets/icons/Filtro.png"
     import Botton from "./Botton.svelte";
     import Logout from "./Logout.svelte";
+    import Modal from "./Modal.svelte";
   let isMenuOpen = false;
 
   function toggleMenu() {
     isMenuOpen = !isMenuOpen;
   }
+
+
 </script>
 
 <!-- Icono de hamburguesa y ventana emergente -->
@@ -19,7 +22,7 @@
 
 <!-- Ventana emergente -->
 <div class="popup-container {isMenuOpen ? 'show' : 'hide'}">
-  <Botton src={agregarSRC} buttonName="AGREGAR"/>
+  <Botton src={agregarSRC}   buttonName="AGREGAR"/>
   <Botton src={filtroSRC} buttonName="FILTRO"/>
   <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
 </div>
