@@ -2,6 +2,7 @@
   
   export let action
 
+
   let informacion
   let tipo
   let monto
@@ -12,7 +13,7 @@
   $:{
     action(rInfo, rTipo, rMonto)
   }
-
+ 
   
 </script>
 
