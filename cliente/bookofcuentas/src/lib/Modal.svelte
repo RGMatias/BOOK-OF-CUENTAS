@@ -1,5 +1,6 @@
 <script>
     import BtnAgregar from "./BtnAgregar.svelte";
+    import {MostrarModal} from "../store/balance"
     
     export let buttonName="AGREGAR"
     export let action
@@ -12,10 +13,10 @@
         <div>
             <div class="grid-class-button">
                 <div class="agregarCenter">
-                    <BtnAgregar {action} {buttonName}/>
+                    <BtnAgregar action={()=>{action();$MostrarModal=false}} {buttonName}/>
                 </div>
                 <div>
-                    <BtnAgregar action={()=>{console.log("logica para cancelar")}} positive={false} buttonName="CANCELAR"/>
+                    <BtnAgregar action={()=>{console.log("logica para cancelar");$MostrarModal=false}} positive={false} buttonName="CANCELAR"/>
                 </div>
           
             </div> 

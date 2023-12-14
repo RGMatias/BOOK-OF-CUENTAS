@@ -6,14 +6,15 @@
     if (!withIcon) {
         borderColor="colorRed"
     }
+    export let action 
 </script>
 <div class="grid-class-button {borderColor}" >
     {#if withIcon}
         <img {src} alt="">
-        <button  >{buttonName}</button>
+        <button  on:click={action()} >{buttonName}</button>
         
     {:else}
-        <button class="withOutIcons colorRed" >{buttonName}</button>
+        <button class="withOutIcons colorRed"  on:click={action()}>{buttonName}</button>
     {/if}
 </div>
 
@@ -29,7 +30,7 @@
         height: 45px;
         align-items: center;
         align-content: center;
-        
+        z-index: 40px;
     }
     img{
         width: 50px;

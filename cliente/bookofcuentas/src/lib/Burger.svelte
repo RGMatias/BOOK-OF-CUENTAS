@@ -1,8 +1,9 @@
 <script>
   import agregarSRC from "../assets/icons/Agregar.png"
   import filtroSRC from "../assets/icons/Filtro.png"
-    import Botton from "./Botton.svelte";
-    import Logout from "./Logout.svelte";
+  import Botton from "./Botton.svelte";
+  import {MostrarModal , MostrarModalEdit} from "../store/balance"
+  import Logout from "./Logout.svelte";
   let isMenuOpen = false;
 
   function toggleMenu() {
@@ -19,9 +20,9 @@
 
 <!-- Ventana emergente -->
 <div class="popup-container {isMenuOpen ? 'show' : 'hide'}">
-  <Botton src={agregarSRC} buttonName="AGREGAR"/>
-  <Botton src={filtroSRC} buttonName="FILTRO"/>
-  <Botton src="" withIcon={false} buttonName="CERRAR SESION"/>
+  <Botton src={agregarSRC} action={()=>{$MostrarModal = true}} buttonName="AGREGAR"/>
+  <Botton src={filtroSRC} action={()=>{console.log("filtro") }} buttonName="FILTRO"/>
+  <Botton src="" withIcon={false} action={()=>{ }} buttonName="CERRAR SESION"/>
 </div>
 <style>
   /* Estilos para icono de hamburguesa y ventana emergente  */
@@ -74,7 +75,7 @@
     grid-template-columns: auto;
     grid-template-rows: auto auto 0.99fr;
     align-content: start;
-    
+    z-index: 40;
   }
   /* <CSS: Clases para mostrar u ocultar la ventana emergente */
   /* .show {
