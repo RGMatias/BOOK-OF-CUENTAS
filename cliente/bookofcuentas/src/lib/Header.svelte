@@ -34,6 +34,7 @@ header{
     display: grid;
     width: 100%;
     grid-template-columns:auto auto auto auto;
+    z-index: 40px;
     /* justify-content:center ; */
 
 }
