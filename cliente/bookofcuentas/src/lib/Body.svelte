@@ -71,6 +71,14 @@
         saldos = saldos
         console.log(result)
     }
+
+    function actualizarSaldo(pSaldo) {
+        for (let index = 0; index < pSaldo.length; index++) {
+            pSaldo[index].isEdit= false
+            
+        }
+        saldos=pSaldo
+    }
     
 </script>
 
@@ -115,10 +123,9 @@
          </Modal>
     {/if}
     {#if $MostrarModalEdit}
-         <Modal action={()=>{agregarBalance()}}>
-             <!-- <Filtro /> -->
-             <Agregar action={saveInfo} />
-             
+         <Modal action={()=>{}}>
+             <Filtro action={actualizarSaldo}/>
+                         
          </Modal>
     {/if}
 </div>

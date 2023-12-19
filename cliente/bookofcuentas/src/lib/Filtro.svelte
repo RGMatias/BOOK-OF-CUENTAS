@@ -1,35 +1,55 @@
 <script>
-    // your script goes here
+    import { GetBalance } from "../controllers/Saldo";
+    import {MostrarModalEdit} from "../store/balance"
+    
+    let fechaInicio
+    let fechaFin
+    export let action
+
+    
+    async function dateF(){
+      console.log({fechaInicio, fechaFin})
+      let fechaInicio2 = new Date(fechaInicio).getTime()
+      let fechaFin2 = new Date(fechaFin).getTime()
+      
+      if (fechaInicio2>fechaFin2) {
+        return
+      }
+
+      let result = await GetBalance(fechaInicio2, fechaFin2)
+        console.log(result)
+        action(result.data)
+        // if (!result.sucess) return
+        // saldos = result.data
+        // for (let index = 0; index < saldos.length; index++) {
+        //     saldos[index].isEdit= false
+            
+        // }
+
+      $MostrarModalEdit=false
+
+      
+    }
 </script>
 
 <div class="container">
     
-        <label for="fecha">Fecha:</label>
-        <label for="informacion">Informacion</label>
-        <label for="Tipo">Tipo:</label>
-        <label for="monto">Monto</label>
-
+    
+        <label for="Fecha Desde">Fecha Desde</label>
+        <label for="Fecha Hasta">Fecha Hasta</label>
+      
         <div>
-          <!-- <input type="datetime-local" id="fecha" name="fecha">     -->
-          {new Date().toLocaleDateString()}
+          <input bind:value={fechaInicio} type="datetime-local" id="fechasDesde" name="Fecha Desde">
         </div>
+      
         <div>
-          <input type="text" id="informacion" name="informacion">
+          <input bind:value={fechaFin} type="datetime-local" id="fechaHasta" name="Fecha Hasta">
         </div>
-        <div>
-          <select name="tipo" id="tipo">
-            <option value="Entrada">Entrada</option>
-            <option value="Salida">Salidad</option>
-          </select>
+        <div class="">
+          <input class="buttonstyle" type="button" on:click={()=>{dateF()}} value="Agregar">
         </div>
-        <div>
-          <input value="" type="number" id="monto" name="monto">
-        </div>
-        <div class="position">
-          <input class="buttonstyle" type="button" value="Agregar">
-        </div>
-        <div class="position2">
-          <input class="buttonstyle" type="button" value="Cancelar">
+        <div class="">
+          <input class="buttonstyle" type="button" on:click={()=>{$MostrarModalEdit=false}} value="Cancelar">
         </div>
 </div>
 
@@ -50,7 +70,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     display: grid;
     z-index: 20;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto ;
     grid-template-rows: auto;
     gap: 10px;
     justify-items: center;

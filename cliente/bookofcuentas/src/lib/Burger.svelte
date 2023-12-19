@@ -21,7 +21,7 @@
 <!-- Ventana emergente -->
 <div class="popup-container {isMenuOpen ? 'show' : 'hide'}">
   <Botton src={agregarSRC} action={()=>{$MostrarModal = true}} buttonName="AGREGAR"/>
-  <Botton src={filtroSRC} action={()=>{console.log("filtro") }} buttonName="FILTRO"/>
+  <Botton src={filtroSRC} action={()=>{$MostrarModalEdit=true}} buttonName="FILTRO"/>
   <Botton src="" withIcon={false} action={()=>{ }} buttonName="CERRAR SESION"/>
 </div>
 <style>
