@@ -1,6 +1,25 @@
 <script>
     import Burger from "./Burger.svelte";
+    import {GetSaldos} from "../controllers/Saldo/GetSaldos";
+    let saldos = []
+    export const SaldoTotal = () => {
+        let result = GetSaldos ()
+        console.log(result)
+
+    }
     
+        // let fechas = FiltroFecha ()
+        // let result = await GetBalance(fechas.fechaInicio, fechas.fechaFin)
+        // console.log(result)
+        // if (!result.sucess) return
+        // saldos = result.data
+        // for (let index = 0; index < saldos.length; index++) {
+        //     saldos[index].isEdit= false
+            
+        // }
+        // saldos = saldos
+        // console.log(saldos)
+
     let src = 'src/assets/logo_pequeño-removebg-preview.png'
     let name = 'bookICON'
 </script>
@@ -9,7 +28,7 @@
     <div class="container marco">
         <img {src} alt="bookICON" class="icon">
         <div  class="tres-puntos font-color data item" >Nombre:Darwin Rodriguez Gamarra</div>
-        <div  class="tres-puntos font-color data item2"  >Saldo Total:99999999999</div>
+        <div  class="tres-puntos font-color data item2"  >Saldo Total:313216 {SaldoTotal()}</div>
         <Burger/>
     </div>
 </header>

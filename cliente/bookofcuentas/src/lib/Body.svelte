@@ -1,6 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { AddBalance, GetBalance } from "../controllers/Saldo/";
+    import {GetSaldos} from "../controllers/Saldo/GetSaldos";
     import { DeleteBalance } from "../controllers/Saldo/DeleteBalance";
     import { EditBalance } from "../controllers/Saldo/EditBalance";
     import {FiltroFecha}   from "../Tools/FiltroFecha"
