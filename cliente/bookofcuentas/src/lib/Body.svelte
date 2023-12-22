@@ -5,7 +5,7 @@
     import { DeleteBalance } from "../controllers/Saldo/DeleteBalance";
     import { EditBalance } from "../controllers/Saldo/EditBalance";
     import {FiltroFecha}   from "../Tools/FiltroFecha"
-    import {MostrarModal , MostrarModalEdit} from "../store/balance"
+    import {MostrarModal , MostrarModalEdit , saldoTotal} from "../store/balance"
     import Agregar from "./Agregar.svelte";
     import Filtro from "./Filtro.svelte";
     import Modal from "./Modal.svelte";
@@ -13,6 +13,7 @@
     let informacion
     let tipo
     let monto
+
 
     function saveInfo(pInformacion, pTipo, pMonto) {
         informacion=pInformacion
@@ -24,15 +25,16 @@
     async function agregarBalance(){
       let result = await AddBalance(new Date().getTime(), informacion, tipo, monto)
       if (!result.sucess) return 
-      console.log(result.msg)
+    //   console.log(result.msg)
       saldos.push(result.data) 
       saldos = saldos
+      await SaldoTotal()
     }
     let saldos = []
     onMount(async()=>{
         let fechas = FiltroFecha ()
         let result = await GetBalance(fechas.fechaInicio, fechas.fechaFin)
-        console.log(result)
+        // console.log(result)
         if (!result.sucess) return
         saldos = result.data
         for (let index = 0; index < saldos.length; index++) {
@@ -40,26 +42,30 @@
             
         }
         saldos = saldos
-        console.log(saldos)
+        await SaldoTotal()
+        // console.log(saldos)
     })
     async function DeleteBalanceButton(id) {
         let result = await DeleteBalance(id)
         if (!result.sucess) return
-        console.log(result)
+        // console.log(result)
         let index = saldos.findIndex(s=>s._id==id)
         if (index==-1)  return
         saldos.splice(index,1)
         saldos = saldos
+        await SaldoTotal()
     }
     function EditBalanceButton(id , monto) {
         let index = saldos.findIndex(s=>s._id==id)
         if (index==-1)  return
         saldos[index].isEdit= true
         saldos = saldos
-        setTimeout(() => {
+        setTimeout(async () => {
             
             document.getElementById("saldo_"+id).value = monto
+            await SaldoTotal()
         }, 100);
+        
     }
     async function ActualizarBalance(id) {
         let index = saldos.findIndex(s=>s._id==id)
@@ -70,8 +76,18 @@
         result.data.isEdit = false
         saldos[index]=result.data
         saldos = saldos
-        console.log(result)
+        await SaldoTotal()
+        // console.log(result)
     }
+
+    export const SaldoTotal = async () => {
+    let result = await GetSaldos ()
+    if (result==null||result==undefined) return
+    $saldoTotal = result.data
+    
+    
+
+}
     
 </script>
 
